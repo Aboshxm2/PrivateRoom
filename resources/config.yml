@@ -1,0 +1,27 @@
+# set player join message
+# use {player} to replace it with player name
+joinToRoomMsg: "§8[§6PrivateRoom§8] §b{player} §ajoined§7."
+
+# set player quit message
+# use {player} to replace it with player name
+quitFromRoomMsg: "§8[§6PrivateRoom§8] §b{player} §cleave§7."
+
+# set join sign text
+# use {countPlayers} to count players and {slots} to get slots of room
+joinSign:
+  "0": "§6Private Room"
+  "1": ""
+  "2": "§7{countPlayers} §f\\ §8{slots}"
+  "3": ""
+
+# set quit sign text
+# use {countPlayers} to count players and {slots} to get slots of room
+quitSign:
+  "0": ""
+  "1": "§cLeave"
+  "2": ""
+  "3": ""
+
+# set message prefix
+# use {player} to get player name and {msg} to get the message
+msgPrefix: "§8[§6PrivateRoom§8] §b{player} §9send §7\"{msg}§7\"."
