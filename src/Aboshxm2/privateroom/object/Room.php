@@ -21,7 +21,7 @@ use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 use pocketmine\level\Position;
 use pocketmine\tile\Sign;
-use pocketmine\event\player\{PlayerInteractEvent, PlayerCommandPreprocessEvent};
+use pocketmine\event\player\{PlayerInteractEvent, PlayerCommandPreprocessEvent, PlayerQuitEvent};
 use pocketmine\event\entity\EntityTeleportEvent;
 use Aboshxm2\privateroom\_class\PrivateRoom;
 use CortexPE\DiscordWebhookAPI\{Message, Webhook};
@@ -83,6 +83,13 @@ class Room implements Listener {
 				}
 				$this->broadcastMessage(str_replace(['{player}', '{msg}'], [$player->getName(), $event->getMessage()], $this->plugin->getConfig()->get('msgPrefix')));
 			}
+		}
+	}
+	
+	public function onQuit (PlayerQuitEvent $event) {
+		$player = $event->getPlayer();
+		if (isset($this->players[$player->getName()])){
+			$this->quitFromRoom($player, false);
 		}
 	}
 
