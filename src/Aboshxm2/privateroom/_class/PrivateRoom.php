@@ -101,6 +101,7 @@ class PrivateRoom extends PluginBase implements Listener {
 				if (isset($args[1])){
 					if (isset($this->rooms[strtolower($args[1])])){
 						unset($this->rooms[strtolower($args[1])]);
+						if (is_file($this->getDataFolder().'rooms'.DIRECTORY_SEPARATOR.strtolower($args[1]).'.json')) @unlink($this->getDataFolder().'rooms'.DIRECTORY_SEPARATOR.strtolower($args[1]).'.json');
 					}else {
 						$sender->sendMessage('§c'.strtolower($args[1]).' not found.');
 					}
