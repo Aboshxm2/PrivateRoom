@@ -41,7 +41,7 @@ class Room implements Listener {
 		$this->data = $data;
 		$this->name = $roomName;
 		$this->plugin->getServer()->getPluginManager()->registerEvents($this, $this->plugin);
-		$this->reloadSign();
+		if ($this->isEnabled()) $this->reloadSign();
 	}
 
 	public function onSignTouch (PlayerInteractEvent $event) {
