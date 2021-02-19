@@ -1,6 +1,6 @@
 name: PrivateRoom
 author: Aboshxm2
-version: 1.0.0
+version: 1.0.2
 description: Only those in the room can see your conversation !
 website: https://github.com/Aboshxm2/PrivateRoom
 main: Aboshxm2\privateroom\_class\PrivateRoom
